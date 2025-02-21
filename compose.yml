@@ -1,0 +1,11 @@
+services:
+  letta:
+    image: letta/letta:latest
+    container_name: letta
+    restart: unless-stopped
+    ports:
+      - "8283:8283"
+    environment:
+      OPENAI_API_KEY: "your_openai_api_key"
+    volumes:
+      - ~/.letta/.persist/pgdata:/var/lib/postgresql/data
